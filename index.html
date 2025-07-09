@@ -755,7 +755,7 @@
         </div>
         <div>
             <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;"></h3>
-            <p style="font-weight: 500;">Aminasia trade center, Wuse, Abuja 904101, Federal Capital Territory </p>
+            <p style="font-weight: 500;"> </p>
         </div>
         <div>
             <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;"></h3>
@@ -763,6 +763,7 @@
         </div>
     </div>
 </section>
+  <!-- Updated Services Section -->
   <!-- Updated Services Section -->
 <section id="services" class="services-bento">
     <div class="section-header">
@@ -791,7 +792,7 @@
             </div>
         </div>
 
-       
+        
 
         <div class="bento-card">
             <div class="media-container">
@@ -836,6 +837,181 @@
         </div>
     </div>
 </section>
+<style> 
+<style>
+/* Basic Reset & Box Sizing */
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* A more elegant font */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Section Header Styling --- */
+.services-bento .section-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background-color: #fcf8f5; /* Very light, warm background */
+}
+
+.services-bento .section-title {
+    font-size: 2.8em;
+    color: #7b4f5b; /* Deep rose/plum for femininity */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.services-bento .section-subtitle {
+    font-size: 1.2em;
+    color: #8c737c;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Bento Grid Container --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 25px; /* Spacing between cards */
+    padding: 40px 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for the grid itself */
+}
+
+/* --- Bento Card Styling --- */
+.bento-card {
+    background-color: #fff;
+    border-radius: 15px; /* Softer rounded corners */
+    overflow: hidden; /* Ensures media stays within bounds */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft, elegant shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For potential overlays */
+}
+
+.bento-card:hover {
+    transform: translateY(-8px); /* Subtle lift effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bento-card .media-container {
+    width: 100%;
+    height: 220px; /* Fixed height for consistent images/videos */
+    overflow: hidden;
+    position: relative;
+}
+
+.bento-card .media-container img,
+.bento-card .media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    display: block;
+}
+
+.bento-card .card-content {
+    padding: 25px;
+    flex-grow: 1; /* Allows content to expand and push footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-card h3 {
+    font-size: 1.6em;
+    color: #7b4f5b;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.bento-card p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0; /* Remove default margin */
+}
+
+/* --- Specific Bento Card Sizing (for 'lg' cards) --- */
+/* For larger screens, make certain cards span more columns */
+@media (min-width: 768px) {
+    .bento-card-lg {
+        grid-column: span 2; /* Spans two columns */
+        /* You might want a different height for larger cards */
+        /* .bento-card-lg .media-container { height: 350px; } */
+    }
+
+    /* Adjust specific card placement for a more dynamic Bento layout */
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+    }
+
+    /* Example: Make the first large card start at column 1 and span 2,
+       and the second large card start at column 2 and span 2, etc.
+       You can customize this to your desired layout. */
+    .bento-card:nth-child(1) {
+        grid-column: span 2;
+    }
+    .bento-card:nth-child(7) { /* Eyelashes */
+        grid-column: span 2;
+    }
+
+    /* Reorder for better flow on larger screens, if needed */
+    .bento-card:nth-child(2) { /* Hair Colouring */
+        order: 2;
+    }
+    .bento-card:nth-child(3) { /* Waxing */
+        order: 3;
+    }
+    .bento-card:nth-child(4) { /* Hair Styling */
+        order: 4;
+    }
+    .bento-card:nth-child(5) { /* Massage */
+        order: 5;
+    }
+    .bento-card:nth-child(6) { /* Pedicure */
+        order: 6;
+    }
+    .bento-card:nth-child(8) { /* Eyebrow */
+        order: 8;
+    }
+}
+
+/* Further adjustments for extra large screens */
+@media (min-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on very large screens */
+        gap: 30px;
+    }
+
+    .bento-card-lg {
+        grid-column: span 2; /* Still span 2 columns */
+    }
+
+    /* Example layout for 4 columns */
+    .bento-card:nth-child(1) { grid-column: span 2; } /* Makeup */
+    .bento-card:nth-child(2) { grid-column: span 1; } /* Hair Colouring */
+    .bento-card:nth-child(3) { grid-column: span 1; } /* Waxing */
+    .bento-card:nth-child(4) { grid-column: span 1; } /* Hair Styling */
+    .bento-card:nth-child(5) { grid-column: span 1; } /* Massage */
+    .bento-card:nth-child(6) { grid-column: span 1; } /* Pedicure */
+    .bento-card:nth-child(7) { grid-column: span 2; } /* Eyelashes */
+    .bento-card:nth-child(8) { grid-column: span 1; } /* Eyebrow */
+}
+
+/* Icon (if you still want to use them subtly, otherwise remove) */
+.service-icon {
+    display: none; /* Hide Font Awesome icons if using images/videos */
+}
+
+/* Font Awesome (if you're using it for other parts of the site) */
+/* Make sure you link Font Awesome in your HTML <head> */
+/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> */
+</style>
+
+</style>
 <style> 
 <style>
 /* Basic Reset & Box Sizing */
