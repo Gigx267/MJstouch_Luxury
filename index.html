@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJstouch_Luxury | Premium Beauty Salon</title>
+    <link rel="icon" href="sa (2).jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B38B2D;
+            --ivory: #F8F4E9;
+            --charcoal: #333333;
+            --soft-gray: #E8E8E8;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Header */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(248, 244, 233, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--gold);
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin-left: 2.5rem;
+            position: relative;
+        }
+        
+        .main-nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+        
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+        }
+        
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .menu-icon .bar {
+            width: 25px;
+            height: 2px;
+            background-color: var(--charcoal);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(248, 244, 233, 0.9) 0%, rgba(248, 244, 233, 0.6) 100%);
+            z-index: 1;
+        }
+        
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            padding: 0 5%;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+        
+        .hero-text {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--gold);
+            color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-gold);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 8rem 5%;
+            background-color: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+        
+        .section-subtitle {
+            font-size: 1rem;
+            color: #777;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background-color: var(--ivory);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #777;
+            font-size: 0.95rem;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 0;
+            background-color: var(--ivory);
+        }
+        
+        .gallery-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 2%;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 300px;
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        .gallery-item:nth-child(6) {
+            grid-column: span 2;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-caption {
+            color: white;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 8rem 5%;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            padding: 3rem 2rem;
+            background-color: var(--ivory);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-text p, .contact-text a {
+            font-size: 0.95rem;
+            color: #777;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--soft-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--gold);
+            color: white;
+        }
+        
+        .contact-form {
+            padding: 3rem 2rem;
+            background-color: var(--ivory);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--soft-gray);
+            background-color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 4rem 5% 2rem;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            color: var(--gold);
+        }
+        
+        .footer-text {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-link {
+            margin: 0 1rem;
+            color: #aaa;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .footer-link:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            font-size: 0.8rem;
+            color: #777;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .gallery-grid {
+                grid-auto-rows: 250px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero {
+                min-height: 700px;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .gallery-item:nth-child(1) {
+                grid-column: span 3;
+                grid-row: span 1;
+            }
+            
+            .gallery-item:nth-child(6) {
+                grid-column: span 3;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            
+            .main-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background-color: var(--ivory);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                padding-top: 80px;
+            }
+            
+            .main-nav.active {
+                right: 0;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 0 2rem;
+            }
+            
+            .main-nav li {
+                margin: 0 0 1.5rem;
+            }
+            
+            .menu-toggle:checked ~ .main-nav {
+                right: 0;
+            }
+            
+            .hero {
+                min-height: 600px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(6) {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 2rem;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 250px;
+            }
+            
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(6) {
+                grid-column: span 1;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+            }
+            
+            .footer-link {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">MJstouch_<span>Luxury</span></div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="service.html">  Services</a></li>
+                    <li><a href="about.html">About Us  </a></li>
+                    <li><a href="contact.html">Contact  </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="sa (6).jpg" alt="Luxury Beauty Salon">
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Premium Beauty Experience</p>
+            <h1 class="hero-title">Where Elegance Meets Transformation</h1>
+            <p class="hero-text">Indulge in our exclusive beauty treatments designed to enhance your natural beauty with a touch of luxury and sophistication.</p>
+            <a href="#contact" class="cta-button">Book an Appointment</a>
+        </div>
+    </section>
+<!-- About Section -->
+<section id="about" class="about" style="padding: 8rem 5%; background-color: var(--ivory);">
+    <div class="section-header">
+        <h2 class="section-title">About MJ's Touch Luxury Salon</h2>
+        <p class="section-subtitle">Your premier beauty destination</p>
+    </div>
+    
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--charcoal);">Our Story</h3>
+            <p style="margin-bottom: 1.5rem;">At MJ's Touch Luxury Salon, we believe beauty is an art form. Founded with a passion for excellence, our salon offers a sanctuary where clients receive personalized, high-quality beauty treatments in an elegant atmosphere.</p>
+            <p style="margin-bottom: 1.5rem;">We specialize in a wide range of services from makeup to microblading, using only the finest products and techniques to ensure stunning results.</p>
+            <p>Our team of certified professionals is dedicated to helping you look and feel your absolute best.</p>
+        </div>
+        <div style="position: relative;">
+            <img src="sa (8).jpg" alt="MJ's Touch Luxury Salon Interior" style="border-radius: 5px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+            <div style="position: absolute; bottom: -20px; right: -20px; width: 150px; height: 150px; background-color: var(--gold); z-index: -1;"></div>
+        </div>
+    </div>
+    
+    <div style="max-width: 1200px; margin: 4rem auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
+        <div>
+            <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;"></h3>
+            <p style="font-weight: 500;"></p>
+        </div>
+        <div>
+            <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;"></h3>
+            <p style="font-weight: 500;">Aminasia trade center, Wuse, Abuja 904101, Federal Capital Territory </p>
+        </div>
+        <div>
+            <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;"></h3>
+            <p style="font-weight: 500;"> </p>
+        </div>
+    </div>
+</section>
+  <!-- Updated Services Section -->
+<section id="services" class="services-bento">
+    <div class="section-header">
+        <h2 class="section-title">Our Signature Services</h2>
+        <p class="section-subtitle">Indulge in a curated collection of beauty treatments, each designed to unveil your unique radiance.</p>
+    </div>
+
+    <div class="bento-grid">
+        <div class="bento-card bento-card-lg">
+            <div class="media-container">
+                <img src="sa (1).jpg" alt="Professional Makeup Application" loading="lazy">
+                </div>
+            <div class="card-content">
+                <h3>Makeup</h3>
+                <p>Flawless application for bridal, editorial, and special events.</p>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <div class="media-container">
+                <img src="vc (7).jpg" alt="Expert Hair Colouring" loading="lazy">
+                </div>
+            <div class="card-content">
+                <h3>Hair Colouring</h3>
+                <p>Achieve your dream shade with premium products.</p>
+            </div>
+        </div>
+
+       
+
+        <div class="bento-card">
+            <div class="media-container">
+                <img src="sa (2).jpg" alt="Custom Hair Styling" loading="lazy">
+                </div>
+            <div class="card-content">
+                <h3>Hair Styling</h3>
+                <p>Custom cuts, styles, and treatments for your perfect look.</p>
+            </div>
+        </div>
+
+       
+
+        <div class="bento-card">
+            <div class="media-container">
+                <img src="de2.webp" alt="Luxurious Pedicure" loading="lazy">
+                </div>
+            <div class="card-content">
+                <h3>Pedicure</h3>
+                <p>Indulge in luxurious foot care and nail artistry.</p>
+            </div>
+        </div>
+
+        <div class="bento-card bento-card-lg">
+            <div class="media-container">
+                <img src="aq (1).jpg" alt="Eyelash Enhancements" loading="lazy">
+                </div>
+            <div class="card-content">
+                <h3>Eyelashes</h3>
+                <p>Extensions, lifts, and tints for captivating eyes.</p>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <div class="media-container">
+                <img src="sa (5).jpg" alt="Eyebrow Microblading" loading="lazy">
+                </div>
+            <div class="card-content">
+                <h3>Eyebrow (Microblading)</h3>
+                <p>Perfectly shaped, natural-looking semi-permanent brows.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<style> 
+<style>
+/* Basic Reset & Box Sizing */
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* A more elegant font */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Section Header Styling --- */
+.services-bento .section-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background-color: #fcf8f5; /* Very light, warm background */
+}
+
+.services-bento .section-title {
+    font-size: 2.8em;
+    color: #7b4f5b; /* Deep rose/plum for femininity */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.services-bento .section-subtitle {
+    font-size: 1.2em;
+    color: #8c737c;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Bento Grid Container --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 25px; /* Spacing between cards */
+    padding: 40px 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for the grid itself */
+}
+
+/* --- Bento Card Styling --- */
+.bento-card {
+    background-color: #fff;
+    border-radius: 15px; /* Softer rounded corners */
+    overflow: hidden; /* Ensures media stays within bounds */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft, elegant shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For potential overlays */
+}
+
+.bento-card:hover {
+    transform: translateY(-8px); /* Subtle lift effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bento-card .media-container {
+    width: 100%;
+    height: 220px; /* Fixed height for consistent images/videos */
+    overflow: hidden;
+    position: relative;
+}
+
+.bento-card .media-container img,
+.bento-card .media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    display: block;
+}
+
+.bento-card .card-content {
+    padding: 25px;
+    flex-grow: 1; /* Allows content to expand and push footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-card h3 {
+    font-size: 1.6em;
+    color: #7b4f5b;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.bento-card p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0; /* Remove default margin */
+}
+
+/* --- Specific Bento Card Sizing (for 'lg' cards) --- */
+/* For larger screens, make certain cards span more columns */
+@media (min-width: 768px) {
+    .bento-card-lg {
+        grid-column: span 2; /* Spans two columns */
+        /* You might want a different height for larger cards */
+        /* .bento-card-lg .media-container { height: 350px; } */
+    }
+
+    /* Adjust specific card placement for a more dynamic Bento layout */
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+    }
+
+    /* Example: Make the first large card start at column 1 and span 2,
+       and the second large card start at column 2 and span 2, etc.
+       You can customize this to your desired layout. */
+    .bento-card:nth-child(1) {
+        grid-column: span 2;
+    }
+    .bento-card:nth-child(7) { /* Eyelashes */
+        grid-column: span 2;
+    }
+
+    /* Reorder for better flow on larger screens, if needed */
+    .bento-card:nth-child(2) { /* Hair Colouring */
+        order: 2;
+    }
+    .bento-card:nth-child(3) { /* Waxing */
+        order: 3;
+    }
+    .bento-card:nth-child(4) { /* Hair Styling */
+        order: 4;
+    }
+    .bento-card:nth-child(5) { /* Massage */
+        order: 5;
+    }
+    .bento-card:nth-child(6) { /* Pedicure */
+        order: 6;
+    }
+    .bento-card:nth-child(8) { /* Eyebrow */
+        order: 8;
+    }
+}
+
+/* Further adjustments for extra large screens */
+@media (min-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on very large screens */
+        gap: 30px;
+    }
+
+    .bento-card-lg {
+        grid-column: span 2; /* Still span 2 columns */
+    }
+
+    /* Example layout for 4 columns */
+    .bento-card:nth-child(1) { grid-column: span 2; } /* Makeup */
+    .bento-card:nth-child(2) { grid-column: span 1; } /* Hair Colouring */
+    .bento-card:nth-child(3) { grid-column: span 1; } /* Waxing */
+    .bento-card:nth-child(4) { grid-column: span 1; } /* Hair Styling */
+    .bento-card:nth-child(5) { grid-column: span 1; } /* Massage */
+    .bento-card:nth-child(6) { grid-column: span 1; } /* Pedicure */
+    .bento-card:nth-child(7) { grid-column: span 2; } /* Eyelashes */
+    .bento-card:nth-child(8) { grid-column: span 1; } /* Eyebrow */
+}
+
+/* Icon (if you still want to use them subtly, otherwise remove) */
+.service-icon {
+    display: none; /* Hide Font Awesome icons if using images/videos */
+}
+
+/* Font Awesome (if you're using it for other parts of the site) */
+/* Make sure you link Font Awesome in your HTML <head> */
+/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> */
+</style>
+
+</style>
+
+
+   
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2 class="section-title">Visit Our Sanctuary</h2>
+            <p class="section-subtitle">Schedule your luxury experience</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <h4>Location</h4>
+                        <p>Aminasia Trade Center, Wuse, Abuja 904101</p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-text">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+2347060622601">07060622601</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@mjstouchluxury.com">info@mjstouchluxury.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div class="contact-text">
+                        <h4>Hours</h4>
+                        <p>Monday - Saturday: 9AM - 7PM</p>
+                        <p>Sunday: By Appointment Only</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Book an Appointment</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Phone Number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="" disabled selected>Select Service</option>
+                            <option>Makeup Artistry</option>
+                            <option>Skincare Treatment</option>
+                            <option>Hair Design</option>
+                            <option>Nail Artistry</option>
+                            <option>Full Package</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Special Requests"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">MJstouch_<span>Luxury</span></div>
+        <p class="footer-text">A sanctuary of beauty and elegance where every treatment is crafted to perfection, celebrating your unique essence.</p>
+        
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="service.html" class="footer-link">Services</a>
+            <a href="about.html" class="footer-link">About </a>
+            <a href="contact.html" class="footer-link">Contact</a>
+        
+        </div>
+        
+        <p class="copyright">&copy; 2025 MJstouch_Luxury. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        
+        menuToggle.addEventListener('change', function() {
+            if(this.checked) {
+                mainNav.classList.add('active');
+            } else {
+                mainNav.classList.remove('active');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.main-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.checked = false;
+                mainNav.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
