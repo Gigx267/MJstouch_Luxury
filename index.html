@@ -729,40 +729,124 @@
         </div>
     </section>
 <!-- About Section -->
-<section id="about" class="about" style="padding: 8rem 5%; background-color: var(--ivory);">
-    <div class="section-header">
-        <h2 class="section-title">About MJ's Touch Luxury Salon</h2>
-        <p class="section-subtitle">Your premier beauty destination</p>
-    </div>
+<style> 
+
+    /* About Hero Section */
+.about-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('sa (5).jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px; /* To account for fixed header */
+    overflow: hidden;
+}
+
+.about-hero-content {
+    max-width: 800px;
+    padding: 0 5%;
+    animation: fadeInUp 1s ease-out;
+    z-index: 2;
+}
+
+.about-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    color: var(--ivory);
+}
+
+.about-hero-text {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: var(--gold);
+    font-weight: 500;
+}
+
+/* Animation for text */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .about-hero {
+        height: 50vh;
+        min-height: 400px;
+    }
     
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-        <div>
-            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--charcoal);">Our Story</h3>
-            <p style="margin-bottom: 1.5rem;">At MJ's Touch Luxury Salon, we believe beauty is an art form. Founded with a passion for excellence, our salon offers a sanctuary where clients receive personalized, high-quality beauty treatments in an elegant atmosphere.</p>
-            <p style="margin-bottom: 1.5rem;">We specialize in a wide range of services from makeup to microblading, using only the finest products and techniques to ensure stunning results.</p>
-            <p>Our team of certified professionals is dedicated to helping you look and feel your absolute best.</p>
-        </div>
-        <div style="position: relative;">
-            <img src="sa (8).jpg" alt="MJ's Touch Luxury Salon Interior" style="border-radius: 5px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
-            <div style="position: absolute; bottom: -20px; right: -20px; width: 150px; height: 150px; background-color: var(--gold); z-index: -1;"></div>
-        </div>
-    </div>
+    .about-hero-title {
+        font-size: 3rem;
+    }
     
-    <div style="max-width: 1200px; margin: 4rem auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
-        <div>
-            <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;"></h3>
-            <p style="font-weight: 500;"></p>
+    .about-hero-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        height: 45vh;
+        min-height: 350px;
+    }
+    
+    .about-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero {
+        height: 40vh;
+        min-height: 300px;
+    }
+    
+    .about-hero-title {
+        font-size: 2rem;
+    }
+}
+</style>
+<!-- About Hero -->
+   
+     <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="story-container">
+            <div class="story-content">
+                <h2>Where Beauty Meets Artistry</h2>
+                <p>Founded in 2015, MJ's Touch Luxury Salon began as a vision to create a sanctuary where beauty is not just a service, but an art form. Our founder, MaryJane, started with a single chair and a dream to transform the beauty industry in Abuja with unparalleled attention to detail and luxury.</p>
+                <p>What began as a modest studio has blossomed into Abuja's premier beauty destination, known for our signature blend of modern techniques and timeless elegance. Every treatment at MJ's Touch is crafted to celebrate your unique beauty while providing an experience that pampers both body and soul.</p>
+                <p>We believe true beauty comes from confidence, and our mission is to help you discover and enhance your natural radiance through our expert services and personalized care.</p>
+            </div>
+            
         </div>
-        <div>
-            <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;"></h3>
-            <p style="font-weight: 500;"> </p>
+    </section>
+ <section class="about-hero">
+        <div class="about-hero-content">
+            <h1 class="about-hero-title">Our Story of Beauty & Elegance</h1>
+            <p class="about-hero-text">Discover the passion and craftsmanship behind MJ's Touch Luxury Salon</p>
         </div>
-        <div>
-            <h3 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;"></h3>
-            <p style="font-weight: 500;"> </p>
-        </div>
-    </div>
-</section>
+    </section>
   <!-- Updated Services Section -->
   <!-- Updated Services Section -->
 <section id="services" class="services-bento">
@@ -837,6 +921,186 @@
         </div>
     </div>
 </section>
+<!-- Customer Experience Section -->
+<section id="experience" class="experience" style="padding: 8rem 5%; background-color: var(--ivory);">
+    <div class="section-header">
+        <h2 class="section-title">Your Experience Matters</h2>
+        <p class="section-subtitle">How we create unforgettable moments for every guest</p>
+    </div>
+    
+    <div class="experience-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+        <!-- Promise 1 -->
+        <div class="promise-card" style="flex: 1 1 300px; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                <div class="promise-number" style="width: 40px; height: 40px; background-color: var(--gold); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">1</div>
+                <h3 style="font-size: 1.3rem; margin: 0; font-family: 'Cormorant Garamond', serif;">Warm Welcome</h3>
+            </div>
+            <p style="color: #777;">From your first step inside, expect a personalized greeting, refreshments, and a serene environment designed to help you unwind immediately.</p>
+        </div>
+        
+        <!-- Promise 2 -->
+        <div class="promise-card" style="flex: 1 1 300px; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                <div class="promise-number" style="width: 40px; height: 40px; background-color: var(--gold); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">2</div>
+                <h3 style="font-size: 1.3rem; margin: 0; font-family: 'Cormorant Garamond', serif;">Attentive Consultation</h3>
+            </div>
+            <p style="color: #777;">We dedicate time to understand your desires, assess your features, and recommend treatments that will truly enhance your natural beauty.</p>
+        </div>
+        
+        <!-- Promise 3 -->
+        <div class="promise-card" style="flex: 1 1 300px; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                <div class="promise-number" style="width: 40px; height: 40px; background-color: var(--gold); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">3</div>
+                <h3 style="font-size: 1.3rem; margin: 0; font-family: 'Cormorant Garamond', serif;">Meticulous Execution</h3>
+            </div>
+            <p style="color: #777;">Our experts perform each service with precision and care, ensuring flawless results while you relax in our luxurious setting.</p>
+        </div>
+        
+        <!-- Promise 4 -->
+        <div class="promise-card" style="flex: 1 1 300px; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                <div class="promise-number" style="width: 40px; height: 40px; background-color: var(--gold); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">4</div>
+                <h3 style="font-size: 1.3rem; margin: 0; font-family: 'Cormorant Garamond', serif;">Aftercare Guidance</h3>
+            </div>
+            <p style="color: #777;">We provide detailed instructions to maintain your look and extend the life of your treatment, along with follow-up support.</p>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 4rem;">
+        <p style="font-style: italic; color: var(--gold); max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+            "At MJstouch_Luxury, you're not just a client - you're an honored guest. We measure our success by your confidence and satisfaction."
+        </p>
+    </div>
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="gallery" style="padding: 8rem 5%; background-color: var(--ivory);">
+    <div class="section-header">
+        <h2 class="section-title">Our Beauty Gallery</h2>
+        <p class="section-subtitle">Explore our portfolio of transformations and luxury beauty treatments</p>
+    </div>
+    
+    <div class="gallery-container" style="max-width: 1400px; margin: 0 auto;">
+        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 0 2%;">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+                <img src="sd (9).JPG" alt="Bridal Makeup" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                <div class="gallery-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 style="color: white; font-size: 1.2rem; text-align: center;">Bridal Makeup</h3>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+                <img src="sd (8).JPG" alt="Hair Styling" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                <div class="gallery-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 style="color: white; font-size: 1.2rem; text-align: center;">Hair Styling</h3>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+                <img src="sd (7).JPG" alt="Microblading" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                <div class="gallery-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 style="color: white; font-size: 1.2rem; text-align: center;">Microblading</h3>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+                <img src="sd (6).JPG" alt="Hair Coloring" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                <div class="gallery-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 style="color: white; font-size: 1.2rem; text-align: center;">Hair Coloring</h3>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+                <img src="sd (5).JPG" alt="Eyelash Extensions" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                <div class="gallery-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 style="color: white; font-size: 1.2rem; text-align: center;">Eyelash Extensions</h3>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 1/1;">
+                <img src="sd (4).JPG" alt="Pedicure" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                <div class="gallery-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 style="color: white; font-size: 1.2rem; text-align: center;">Luxury Pedicure</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Gallery Hover Effects */
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+    }
+    
+    /* Responsive Gallery */
+    @media (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    // Add lightbox functionality to gallery images
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Create lightbox container
+                const lightbox = document.createElement('div');
+                lightbox.style.position = 'fixed';
+                lightbox.style.top = '0';
+                lightbox.style.left = '0';
+                lightbox.style.width = '100%';
+                lightbox.style.height = '100%';
+                lightbox.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                lightbox.style.display = 'flex';
+                lightbox.style.justifyContent = 'center';
+                lightbox.style.alignItems = 'center';
+                lightbox.style.zIndex = '1000';
+                lightbox.style.cursor = 'zoom-out';
+                
+                // Create image element
+                const img = document.createElement('img');
+                img.src = this.querySelector('img').src;
+                img.alt = this.querySelector('h3').textContent;
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '90%';
+                img.style.objectFit = 'contain';
+                
+                // Add image to lightbox
+                lightbox.appendChild(img);
+                
+                // Add lightbox to body
+                document.body.appendChild(lightbox);
+                
+                // Close lightbox on click
+                lightbox.addEventListener('click', function() {
+                    document.body.removeChild(lightbox);
+                });
+            });
+        });
+    });
+</script>
+
+
 <style> 
 <style>
 /* Basic Reset & Box Sizing */
@@ -1188,6 +1452,51 @@ body {
 
 </style>
 
+<!-- Our Values Section -->
+<section id="values" class="values" style="padding: 8rem 5%; background-color: white;">
+    <div class="section-header">
+        <h2 class="section-title"> <Br><BR><BR>Our Core Values</h2>
+        <p class="section-subtitle">The principles that guide every touch, every treatment, every moment</p>
+    </div>
+    
+    <div class="values-container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; padding: 0 2%;">
+        <!-- Value 1 -->
+        <div class="value-card" style="text-align: center; padding: 2rem;">
+            <div class="value-icon" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem;">
+                <i class="fas fa-gem"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif;">Excellence</h3>
+            <p style="color: #777;">We pursue perfection in every detail, using only premium products and techniques to deliver exceptional results.</p>
+        </div>
+        
+        <!-- Value 2 -->
+        <div class="value-card" style="text-align: center; padding: 2rem;">
+            <div class="value-icon" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem;">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif;">Personalization</h3>
+            <p style="color: #777;">Every client receives bespoke treatments tailored to their unique beauty needs and personal style.</p>
+        </div>
+        
+        <!-- Value 3 -->
+        <div class="value-card" style="text-align: center; padding: 2rem;">
+            <div class="value-icon" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem;">
+                <i class="fas fa-spa"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif;">Wellness</h3>
+            <p style="color: #777;">We believe beauty begins with wellbeing, creating treatments that nourish both body and spirit.</p>
+        </div>
+        
+        <!-- Value 4 -->
+        <div class="value-card" style="text-align: center; padding: 2rem;">
+            <div class="value-icon" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem;">
+                <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif;">Integrity</h3>
+            <p style="color: #777;">Honest consultations, transparent pricing, and ethical practices guide all our relationships.</p>
+        </div>
+    </div>
+</section>
 
    
 
